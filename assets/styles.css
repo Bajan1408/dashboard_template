@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --main-color: #027581;
+    --color-dark: #1D2231;
+    --text-grey: #8390A2;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+.sidebar {
+    height: 100%;
+    width: 15rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: #fff;
+    overflow-y: auto;
+    transition: width 500ms;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.7rem;
+    padding: 0rem 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.sidebar-menu {
+    padding: 1rem;
+}
+
+.sidebar li {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar a {
+    color: #fff;
+    font-size: .8rem;
+}
+
+.sidebar a span:last-child {
+    padding-left: .6rem;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    width: 3.75rem;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~ .sidebar li span:last-child {
+    display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header,
+#sidebar-toggle:checked ~ .sidebar li {
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 3.75rem;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+    left: 3.75rem;
+    width: calc(100% - 5rem);
+}
+
+.main-content {
+    position: relative;
+    z-index: 200;
+    margin-left: 15rem;
+    transition: margin-left 500ms;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 15rem;
+    top: 0;
+    z-index: 100;
+    width: calc(100% - 15rem);
+    background: #fff;
+    height: 3.75rem;
+    padding: 0rem 1rem;
+    border-bottom: 1px solid #ccc;
+    transition: left 500ms;
+}
+
+.sidebar .sidebar-menu {
+    transition: left 500ms;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper input {
+    border: 0;
+    outline: 0;
+    padding: 1rem;
+    height: 2.375rem;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons span,
+.social-icons div {
+    margin-left: 1.2rem;
+}
+
+.social-icons div {
+    height: 2.375rem;
+    width: 2.375rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/1.jpg);
+    border-radius: 50%;
+}
+
+main {
+    margin-top: 3.75rem;
+    background: #F1F5F9;
+    min-height: 90vh;
+    padding: 1rem 3rem;
+}
+
+.dash-title {
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+.dash-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.2rem;
+}
+
+.card-single {
+    background: #fff;
+    border-radius: 0.438rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-body span {
+    font-size: 1.5rem;
+    color: #777;
+    padding-right: 1.4rem;
+}
+
+.card-body h5 {
+    color: var(--text-grey);
+    font-size: 1rem;
+}
+
+.card-body h4 {
+    color: var(--color-dark);
+    font-size: 1.1rem;
+    margin-top: .2rem;
+}
+
+.card-footer {
+    padding: 0.2rem 1rem;
+    background: #eff0f1;
+}
+
+.card-footer a {
+    color: var(--main-color);
+}
+
+.recent {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns:  75% 25%;
+    column-gap: 1.5rem;
+}
+
+.activity-card,
+.summary-card,
+.bday-card {
+    background: #fff;
+    border-radius: 0.438rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.activity-card h3 {
+    color: var(--text-grey);
+    margin: 1rem;
+}
+
+.activity-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.activity-card thead {
+    background: #efefef;
+    text-align: left;
+}
+
+th, td {
+    font-size: .9rem;
+    padding: 1rem .5rem;
+    color: var(--color-dark);
+}
+
+td {
+    font-size: .80rem;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9fafc;
+}
+
+.badge {
+    display: flex;
+    flex-shrink: inherit;
+    justify-content: center;
+    width: 5rem;
+    padding: .3rem 1rem;
+    border-radius: 1.25rem;
+    font-size: .7rem;
+    font-weight: 600;
+}
+
+.badge.success {
+    background: #def7ec;
+    color: var(--main-color);
+}
+
+.badge.warning {
+    background: #f0f6b2;
+    color: #ffa500;
+}
+
+.td-team {
+    display: flex;
+    align-items: center;
+}
+
+.img-1, .img-2, .img-3 {
+    width: 2.375rem;
+    height: 2.375rem;
+    border-radius: 50%;
+    margin-left: -8px;
+    border: 3px solid #efefef;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-1 {
+    background-image: url(img/mickey.jpg);
+}
+
+.img-2 {
+    background-image: url(img/margarida.webp);
+}
+
+.img-3 {
+    background-image: url(img/magali.png);
+}
+
+.summary-card {
+    margin-bottom: 1.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.summary-single {
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.summary-single span {
+    font-size: 1.5rem;
+    color: #777;
+    padding-right: 1rem;
+}
+
+.summary-single h5 {
+    color: var(--main-color);
+    font-size: 1.1rem;
+    margin-bottom: 0rem !important;
+}
+
+.summary-single small {
+    font-weight: 700;
+    color: var(--text-grey);
+}
+
+.bday-card {
+    padding: .8rem;
+}
+
+.bday-flex {
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: .3rem;
+}
+
+.bday-img {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    border: 2px solid #efefef;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/1.jpg);
+    margin-right: .8rem;
+}
+
+.bday-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.bday-info h5 {
+    font-size: .8rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center button {
+    background: var(--main-color);
+    color: #fff;
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    padding: 0.2rem .7rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        width: 3.75rem;
+        z-index: 250;
+    }
+    
+    .sidebar .sidebar-header h3 span,
+    .sidebar li span:last-child {
+        display: none;
+    }
+    
+    .sidebar .sidebar-header,
+    .sidebar li {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .main-content {
+        margin-left: 3.75rem;
+    }
+    
+    .main-content header {
+        left: 3.75rem;
+        width: calc(100% - 3.75rem);
+    }
+
+    #sidebar-toggle:checked ~ .sidebar {
+        width: 15rem;
+    }
+    
+    #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+    #sidebar-toggle:checked ~ .sidebar li span:last-child {
+        display: inline;
+    }
+    
+    #sidebar-toggle:checked ~ .sidebar .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar li {
+        display: block;
+    }
+    
+    #sidebar-toggle:checked ~ .main-content {
+        margin-left: 3.75rem;
+    }
+    
+    #sidebar-toggle:checked ~ .main-content header {
+        left: 3.75rem;
+        width: calc(100% - 3.75rem);
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .dash-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-single {
+        margin-bottom: 1rem;
+    }
+
+    .activity-grid {
+        display: block;
+    }
+
+    .summary {
+        margin-top: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .dash-cards {
+        grid-template-columns: 100%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main {
+        padding: 0 1rem 0 1rem;
+    }
+}
