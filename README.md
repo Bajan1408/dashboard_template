@@ -5,3 +5,10 @@ Meu primeiro template de painel de controle, criado seguindo as orientações em
 Video postado pelo canal **Code Resource** no seguinte [link](https://www.youtube.com/watch?v=3FJgGw_ESEc).
 
 Thanks to the **Code Resource**!!
+
+
+Para visualizar o dashboard no seu navegador visite o link [Aqui](https://bajan1408.github.io/dashboard_template/).
+
+
+
+![Imagem Ilustrativa](image.png)
